@@ -1,0 +1,32 @@
+{
+  "name": "countdown-controller",
+  "version": "0.0.1",
+  "description": "A count up/down controller for rpi i2c 7-segment displays with a rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests available\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagnusKlingenberg/deathclock.git"
+  },
+  "keywords": [
+    "raspberrypi",
+    "i2c",
+    "node",
+    "7-segment"
+  ],
+  "author": "Magnus Klingenberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MagnusKlingenberg/deathclock/issues"
+  },
+  "homepage": "https://github.com/MagnusKlingenberg/deathclock#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
