@@ -1,13 +1,18 @@
 'use strict';
 
+var timers = require('../models/timerModel');
+
+
 exports.listTimers = function(req, res) {
-  res.json([{"timerId": 1}, {"timerId": 2}]);
+  res.json([timers.timerList]);
 };
 
 exports.getTimerSettings = function(req, res) {
-  res.json(req.params);
+  res.json(timers.timerList[req.params.timerId]);
 };
 
 exports.setTimerSettings = function(req, res) {
-  res.json(req.params);
+	//TODO validate input
+	timers.timerList[req.params.timerId] = req.body;
+  res.json([req.params, req.body, timers.timerList[req.params.timerId]]);
 };

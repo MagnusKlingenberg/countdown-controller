@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MagnusKlingenberg/deathclock.git"
+    "url": "git+https://github.com/MagnusKlingenberg/countdown-controller.git"
   },
   "keywords": [
     "raspberrypi",
@@ -19,12 +19,9 @@
   "author": "Magnus Klingenberg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MagnusKlingenberg/deathclock/issues"
+    "url": "https://github.com/MagnusKlingenberg/countdown-controller/issues"
   },
-  "homepage": "https://github.com/MagnusKlingenberg/deathclock#readme",
-  "devDependencies": {
-    "nodemon": "^1.12.1"
-  },
+  "homepage": "https://github.com/MagnusKlingenberg/countdown-controller#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2"
