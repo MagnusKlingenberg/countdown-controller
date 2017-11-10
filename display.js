@@ -8,6 +8,11 @@ function Row(addr_1, addr_2, addr_3, bus) {
 }
 
 Row.prototype.writeTime = function(timestamp) {
+  var negative = 0;
+  if (timestamp < 0) {
+    timestamp = Math.abs(timestamp);
+    negative = 0xff;
+  }
   var date = new Date(timestamp * 1000);
   this.disp_1.writeDigit(4, date.getSeconds() % 10);
   this.disp_1.writeDigit(3, (date.getSeconds() - (date.getSeconds() % 10)) / 10);
@@ -25,7 +30,7 @@ Row.prototype.writeTime = function(timestamp) {
   this.disp_3.writeDigit(4, (date.getMonth() - (date.getMonth() % 10)) / 10);
 
   this.disp_3.writeDigit(1, date.getFullYear() % 10);
-  this.disp_3.writeDigit(0, (date.getFullYear() - (date.getFullYear() % 10)) / 10);
+  this.disp_3.writeDigitRaw(0, negative & 0x40);
 }
 
 module.exports = Row;

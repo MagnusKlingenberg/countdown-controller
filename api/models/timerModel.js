@@ -15,7 +15,11 @@ class Timer {
 		}
 	}
 
+  setMode(mode) {
+    this.mode = mode;
+  }
+
 }
 
-exports.timerList = {0:new Timer('upfrom', Date.now()),
-                    1:new Timer('downto', Date.now())};
+exports.timerList = {0:new Timer('upfrom', Math.floor(Date.now() / 1000)),
+                    1:new Timer('downto', Math.floor(Date.now() / 1000))};
