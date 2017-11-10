@@ -1,19 +1,21 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT ||3000,
-  bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser');
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+function Server(port) {
+  var app = express();
 
-var routes = require('./api/routes/timerRoutes'); //importing route
-routes(app); //register the route
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+
+  var routes = require('./api/routes/timerRoutes'); //importing route
+  routes(app); //register the route
 
 
-app.use(function(req, res) {
+  app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
-});
+  });
 
-app.listen(port);
+  app.listen(port);
+}
 
-console.log('Server started on port: ' + port);
+module.exports = Server;

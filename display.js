@@ -28,9 +28,4 @@ Row.prototype.writeTime = function(timestamp) {
   this.disp_3.writeDigit(0, (date.getFullYear() - (date.getFullYear() % 10)) / 10);
 }
 
-
-var row = new Row(0x70, 0x71, 0x72, 1);
-var now = Math.floor(Date.now() / 1000);
-var interval = setInterval( function() {
-  row.writeTime(Math.floor(Date.now() / 1000) - now);
-}, 200);
+module.exports = Row;
