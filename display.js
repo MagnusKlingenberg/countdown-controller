@@ -14,12 +14,12 @@ Row.prototype.writeTimeDiff = function(timestamp) {
     negative = 0xff;
   }
   var date = new Date(timestamp * 1000);
-  var seconds = date.getSeconds();
-  var minutes = date.getMinutes();
-  var hours   = date.getHours();
-  var days    = date.getDate() - 1;
-  var months  = date.getMonth();
-  var years   = date.getFullYear();
+  var seconds = date.getUTCSeconds();
+  var minutes = date.getUTCMinutes();
+  var hours   = date.getUTCHours();
+  var days    = date.getUTCDate() - 1;
+  var months  = date.getUTCMonth();
+  var years   = date.getUTCFullYear();
 
   this.disp_1.writeDigit(4, seconds % 10);
   this.disp_1.writeDigit(3, (seconds - (seconds % 10)) / 10);
